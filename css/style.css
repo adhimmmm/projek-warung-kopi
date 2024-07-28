@@ -571,6 +571,8 @@ footer .credit a {
     animation: animateModal 0.5s;
 }
 
+
+
 /* Modal Animation */
 @keyframes animateModal {
     from {

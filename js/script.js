@@ -69,8 +69,8 @@ const itemDetailButtons = document.querySelectorAll('.item-detail-button');
 
 itemDetailButtons.forEach((btn) => {
     btn.onclick = (e) => {
-        itemDetailModal.style.display ='flex';
         e.preventDefault();
+        itemDetailModal.style.display ='flex';
     };
 });
 
