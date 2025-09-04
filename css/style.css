@@ -617,9 +617,12 @@ footer .credit a {
 .popup-info {
     flex: 2 1 400px;
     text-align: left;
+    /* Desktop rata kiri */
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    align-items: flex-start;
+    /* Desktop kiri */
 }
 
 .popup-info h2 {
@@ -684,7 +687,7 @@ footer .credit a {
     }
 }
 
-/* ===== Responsive ===== */
+/* ===== Responsive (Mobile) ===== */
 @media (max-width: 768px) {
     .popup-content {
         flex-direction: column;
@@ -699,13 +702,15 @@ footer .credit a {
 
     .popup-info {
         align-items: center;
+        /* Mobile tengah */
+        text-align: center;
+        /* Mobile tengah */
     }
 
     .popup-info h3 {
         font-size: 1.6rem;
     }
 }
-
 
 
 

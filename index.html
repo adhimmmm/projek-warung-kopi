@@ -186,47 +186,49 @@
             </div>
 
             <!-- Modal Popup Start -->
-            <div class="popup-modal" x-show="open" x-cloak @click.self="open = false" x-transition>
-              <div class="popup-container">
-                <!-- Tombol Close -->
-                <a href="#" class="popup-close" @click.prevent="open = false">
-                  <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <use href="img/feather-sprite.svg#x-circle" />
-                  </svg>
-                </a>
+<div class="popup-modal" x-show="open" x-cloak @click.self="open = false" x-transition>
+  <div class="popup-container">
+    <!-- Tombol Close -->
+    <a href="#" class="popup-close" @click.prevent="open = false">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <use href="img/feather-sprite.svg#x-circle" />
+      </svg>
+    </a>
 
-                <div class="popup-content">
-                  <!-- Gambar Produk -->
-                  <div class="popup-image">
-                    <img :src="`img/products/${selected?.img}`" :alt="selected?.name" />
-                  </div>
+    <div class="popup-content">
+      <!-- Gambar Produk -->
+      <div class="popup-image">
+        <img :src="`img/products/${selected?.img}`" :alt="selected?.name">
+      </div>
 
-                  <!-- Info Produk -->
-                  <div class="popup-info">
-                    <div class="popup-name">
-                      <h2>Nama Produk</h2>
-                      <h3 x-text="selected?.name"></h3>
-                    </div>
+      <!-- Info Produk -->
+      <div class="popup-info">
+        <div class="popup-name">
+          <h2>Nama Produk</h2>
+          <h3 x-text="selected?.name"></h3>
+        </div>
 
-                    <div class="popup-description">
-                      <h2>Deskripsi</h2>
-                      <p x-text="selected?.desc ?? 'Belum ada deskripsi'"></p>
-                    </div>
+        <div class="popup-description">
+          <h2>Deskripsi</h2>
+          <p x-text="selected?.desc ?? 'Belum ada deskripsi'"></p>
+        </div>
 
-                    <div class="popup-price">
-                      <h2>Harga</h2>
-                      <span x-text="rupiah(selected?.price)"></span>
-                    </div>
+        <div class="popup-price">
+          <h2>Harga</h2>
+          <span x-text="rupiah(selected?.price)"></span>
+        </div>
 
-                    <a href="#" @click.prevent="$store.cart.add(selected); open=false" class="popup-btn">
-                      <i data-feather="shopping-cart"></i>
-                      <span>Add to Cart</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Modal Popup End -->
+        <a href="#" @click.prevent="$store.cart.add(selected); open=false" class="popup-btn">
+          <i data-feather="shopping-cart"></i>
+          <span>Add to Cart</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Popup End -->
+
 
             <div class="product-image">
               <img :src="`img/products/${item.img}`" :alt="item.name" />
