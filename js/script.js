@@ -63,30 +63,6 @@ document.querySelector('#shopping-cart-button').onclick = (e) => {
 //toggle class active Shopping-cart End
 
 
-//modal Box item detail start
-const itemDetailModal = document.querySelector('#item-detail-modal');
-const itemDetailButtons = document.querySelectorAll('.item-detail-button');
-
-itemDetailButtons.forEach((btn) => {
-    btn.onclick = (e) => {
-        e.preventDefault();
-        itemDetailModal.style.display ='flex';
-    };
-});
-
-
-//Klik Tombol close Modal Box
-document.querySelector('.modal .close-icon').onclick = (e) => {
-    itemDetailModal.style.display ='none';
-    e.preventDefault();
-}
-
-//Klik diluar Modal
-window.onclick = (e) => {
-    if(e.target === itemDetailModal){
-        itemDetailModal.style.display ='none';
-    }
-};
 
 
 

@@ -549,77 +549,163 @@ footer .credit a {
 
 
 /* Modal Box */
-/* Item Detail */
-.modal {
-    display: none;
+/* ===== Overlay ===== */
+.popup-modal {
     position: fixed;
+    inset: 0;
     z-index: 9999;
-    left: 0;
-    top: 0;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
 }
 
-.modal-container {
+[x-cloak] {
+    display: none !important;
+}
+
+/* ===== Container ===== */
+.popup-container {
     position: relative;
-    background-color: #fefefe;
-    color: var(--bg);
-    margin: 15% auto;
-    padding: 1.2rem;
-    border: 1px solid #666;
-    width: 80%;
-    animation: animateModal 0.5s;
+    background: #fff;
+    color: #2d2d2d;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 850px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    animation: fadeInUp 0.4s ease-out;
+    overflow: hidden;
 }
 
+/* ===== Tombol Close ===== */
+.popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    color: #888;
+    transition: all 0.2s ease;
+}
 
+.popup-close:hover {
+    color: #fff;
+    background: var(--primary, #e63946);
+    border-radius: 50%;
+    padding: 0.2rem;
+}
 
-/* Modal Animation */
-@keyframes animateModal {
+/* ===== Konten Modal ===== */
+.popup-content {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* Gambar Produk */
+.popup-image img {
+    flex: 1 1 280px;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Info Produk */
+.popup-info {
+    flex: 2 1 400px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.popup-info h2 {
+    font-size: 0.9rem;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: -0.3rem;
+}
+
+.popup-info h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.popup-info p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: #555;
+}
+
+/* Harga */
+.popup-price span {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--primary, #e63946);
+}
+
+/* Tombol Add to Cart */
+.popup-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.4rem;
+    background: var(--primary, #e63946);
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.popup-btn:hover {
+    background: #b92d39;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(230, 57, 70, 0.3);
+}
+
+/* ===== Animation ===== */
+@keyframes fadeInUp {
     from {
-        transform: translateY(-300px);
+        transform: translateY(40px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
     }
 }
 
-.modal-container .close-icon {
-    position: absolute;
-    right: 1rem;
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .popup-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .popup-image img {
+        max-height: 250px;
+        width: 100%;
+    }
+
+    .popup-info {
+        align-items: center;
+    }
+
+    .popup-info h3 {
+        font-size: 1.6rem;
+    }
 }
 
-.modal-container .close-icon:hover {
-    color: var(--primary);
-}
-
-.modal-content {
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.modal-content img {
-    height: 25rem;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
-}
-
-.modal-content p {
-    font-size: 1.2rem;
-    line-height: 1.8rem;
-    margin-top: 1.2rem;
-}
-
-.modal-content a {
-    display: flex;
-    gap: 1rem;
-    width: 12rem;
-    background-color: var(--primary);
-    color: #fff;
-    margin-top: 1rem;
-    padding: 1rem 1.6rem;
-}
 
 
 

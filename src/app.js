@@ -1,12 +1,14 @@
 document.addEventListener('alpine:init', () => {
     Alpine.data('products', () => ({
         items: [
-            { id: 1, name: 'Robusta Brazil', img: '1.jpg', price: 20000},
+            { id: 1, name: 'Robusta Brazil', desc:'mantap', img: '1.jpg', price: 20000},
             { id: 2, name: 'Arabica Blend', img: '2.jpg', price: 35000},
             { id: 3, name: 'Primo Passo', img: '3.jpg', price: 25000},
             { id: 4, name: 'Sumatra Mandheling', img: '4.jpg', price: 40000},
             { id: 5, name: 'Blue Mountain Jamaica', img: '5.jpg', price: 50000},
         ],
+        open: false,
+        selected: null,
     }));
 
     Alpine.store('cart', {
@@ -16,7 +18,6 @@ document.addEventListener('alpine:init', () => {
         add(newItem) {
             //cek apakah ada barang yang sama di dalam cart
             const cartItem = this.items.find((item) => item.id === newItem.id);
-
             //jika belum ada / cart masih kosong
             if(!cartItem){          
                 this.items.push({...newItem, quantity: 1, total: newItem.price});
