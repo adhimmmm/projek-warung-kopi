@@ -1,14 +1,20 @@
 document.addEventListener('alpine:init', () => {
-    Alpine.data('products', () => ({
-        items: [
-            { id: 1, name: 'Robusta Brazil', desc:'mantap', img: '1.jpg', price: 20000},
-            { id: 2, name: 'Arabica Blend', img: '2.jpg', price: 35000},
-            { id: 3, name: 'Primo Passo', img: '3.jpg', price: 25000},
-            { id: 4, name: 'Sumatra Mandheling', img: '4.jpg', price: 40000},
-            { id: 5, name: 'Blue Mountain Jamaica', img: '5.jpg', price: 50000},
-        ],
-        open: false,
-        selected: null,
+    Alpine.data("products", () => ({
+      items: [
+        {
+          id: 1,
+          name: "Robusta Brazil",
+          desc: "memiliki rasa yang kuat, pahit, dan body yang kental dengan tingkat kafein lebih tinggi daripada Arabika, sering digunakan dalam campuran karena profilnya yang nutty (kacang) dan bersahaja",
+          img: "1.jpg",
+          price: 20000,
+        },
+        { id: 2, name: "Arabica Blend", img: "2.jpg", price: 35000 },
+        { id: 3, name: "Primo Passo", img: "3.jpg", price: 25000 },
+        { id: 4, name: "Sumatra Mandheling", img: "4.jpg", price: 40000 },
+        { id: 5, name: "Blue Mountain Jamaica", img: "5.jpg", price: 50000 },
+      ],
+      open: false,
+      selected: null,
     }));
 
     Alpine.store('cart', {
